@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    color: #ffffff;
+}
+
+:root {
+    --shadow-color: 0deg 0% 8%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: radial-gradient(
+        circle,
+        #1a1a1a,
+        #212121,
+        #282828,
+        #2f2f2f,
+        #373737
+    );
+}
+
+.container {
+    border: 3px solid #373737;
+    width: 600px;
+    height: 350px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-password {
+    width: 100%;
+}
+
+.container-password > .password {
+    height: 10px;
+    width: 100%;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.container-password,
+.password,
+.container-filters,
+.filters,
+.slider,
+.container-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-filters {
+    flex-direction: column;
+}
+
+.container-filters > .slider {
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+}
+
+.slider > * {
+    padding: 5px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    background-color: #ecf0f1;
+    border-radius: 50%;
+    border: 1px solid #bdc3c7;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    width: 100%;
+    border-radius: 8px;
+    height: 15px;
+    border: 1px solid #bdc3c7;
+    background-color: #bdc3c7;
+    -webkit-tap-highlight-color: none;
+}
+
+.filters > * {
+    padding: 15px;
+    border: 1px solid #373737;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+.filters > .box {
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.selected {
+    background: #373737;
+}
+
+.box input {
+    display: none;
+}
+
+.box label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.container-btn {
+    width: 100%;
+    height: 100%;
+}
+
+.box:hover {
+    font-size: 18px;
+}
+
+.container-btn > button {
+    position: relative;
+    width: 100%;
+    margin: 10px;
+    height: 50px;
+    background: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    text-transform: uppercase;
+    border: 2px solid #373737;
+    transition: 0.4s ease;
+    box-shadow: 0px 1px 1.1px hsl(var(--shadow-color) / 0.46),
+        0px 3.6px 4.1px -0.8px hsl(var(--shadow-color) / 0.46),
+        -0.1px 9.1px 10.2px -1.7px hsl(var(--shadow-color) / 0.46),
+        -0.2px 22.4px 25.2px -2.5px hsl(var(--shadow-color) / 0.46);
+    user-select: none;
+}
+
+.container-btn > button::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    background: #373737;
+    left: 0;
+    top: -1px;
+    z-index: -1;
+    transition: 0.4s ease;
+}
+
+.container-btn > button:hover::before {
+    animation: widthXX 0.4s ease forwards;
+}
+
+.container-btn > button:active {
+    box-shadow: none;
+}
+
+@keyframes widthXX {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
+}

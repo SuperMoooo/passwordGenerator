@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Password Generator</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="container-password">
+                <div class="password"></div>
+            </div>
+            <div class="container-filters">
+                <div class="slider">
+                    <label for="lenght">Lenght</label>
+                    <input
+                        type="range"
+                        name="lenght"
+                        id="lenght"
+                        min="3"
+                        max="50"
+                        value="3"
+                    />
+                    <p>3</p>
+                </div>
+                <div class="filters">
+                    <!--letters-->
+                    <div class="box" id="checkedBox1">
+                        <input
+                            checked
+                            type="checkbox"
+                            name="letters"
+                            id="letters"
+                        />
+                        <label data-value="1" for="letters">abc</label>
+                    </div>
+                    <!--BIGletters-->
+                    <div class="box">
+                        <input
+                            type="checkbox"
+                            name="bigletters"
+                            id="bigletters"
+                        />
+                        <label data-value="2" for="bigletters">ABC</label>
+                    </div>
+                    <!--numbers-->
+                    <div class="box">
+                        <input type="checkbox" name="numbers" id="numbers" />
+                        <label data-value="3" for="numbers">123</label>
+                    </div>
+                    <!--symbols-->
+                    <div class="box">
+                        <input type="checkbox" name="symbols" id="symbols" />
+                        <label data-value="4" for="symbols">%#$</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-btn">
+                <button>Generate</button>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
